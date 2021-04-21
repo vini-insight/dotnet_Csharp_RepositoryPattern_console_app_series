@@ -102,7 +102,7 @@ namespace dotnet_Csharp_console_app_series
 			int inputYear = int.Parse(Console.ReadLine());
 			Console.Write("Enter the Series Description:");
 			string entradaDescricao = Console.ReadLine();
-			Serie newSerie = new Serie(id: repository.NextId(),	gender: (Gender)inputGender, title: inputTitle,	year: inputYear, description: entradaDescricao);
+			Serie newSerie = new Serie(id: repository.NextId(), gender: (Gender)inputGender, title: inputTitle, year: inputYear, description: entradaDescricao);
 			repository.Add(newSerie);
 		}
 		private static void UpdateSerie()
@@ -138,7 +138,7 @@ namespace dotnet_Csharp_console_app_series
 			}
 			foreach (var serie in lista)
 			{
-                var deleted = serie.GetDeleted();                
+				var deleted = serie.GetDeleted();                
 				Console.WriteLine("#ID {0}: - {1} {2}", serie.GetId(), serie.GetTitle(), (deleted ? "*Deleted*" : ""));
 			}
 		}
@@ -149,15 +149,13 @@ namespace dotnet_Csharp_console_app_series
 			var serie = repository.GetById(serieIndex);
 			Console.WriteLine(serie);
 		}
-
-        private static void DeleteSerie()
+	    private static void DeleteSerie()
 		{
 			Console.Write("Enter the series id: ");
 			int serieIndex = int.Parse(Console.ReadLine());
 			repository.Delete(serieIndex);
 		}
-
-        private static string GetUserChoice()
+	    private static string GetUserChoice()
 		{
 			Console.WriteLine();
 			Console.WriteLine("DIO Series at your service !!!");
