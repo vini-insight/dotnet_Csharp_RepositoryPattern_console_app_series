@@ -3,8 +3,7 @@ using Models;
 using Enums;
 using System.Threading;
 using System.Collections.Generic;
-
-namespace dotnet_Csharp_console_app_series
+namespace dotnet_Csharp_RepositoryPattern_console_app_series
 {
     class Program
     {
@@ -60,7 +59,6 @@ namespace dotnet_Csharp_console_app_series
 				Console.Clear();
 			}
 		}
-
 		private static void MakeIndication()
 		{
 			List<string> seriesToIndication = new List<string>();
@@ -84,7 +82,6 @@ namespace dotnet_Csharp_console_app_series
 			Random rs = new Random();			
 			Console.WriteLine("I think you will like \"{0}\". Watch and tell me later", arraySeries[rs.Next(seriesToIndication.Count)]);
 		}
-
 		private static void AddSerie()
 		{
 			Console.WriteLine("Add new Series");
@@ -126,7 +123,6 @@ namespace dotnet_Csharp_console_app_series
 			Serie updateSerie = new Serie(id: serieIndex, gender: (Gender)inputGender,	title: inputTitle,	year: inputYear, description: entradaDescricao);
 			repository.Update(serieIndex, updateSerie);
 		}
-
 		private static void GetListSeries()
 		{
 			Console.WriteLine("List series");
